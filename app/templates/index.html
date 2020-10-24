@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1 class="display-4">Pytube-based Youtube Downloader </h1>
+
+<form action="{{ url_for('download_resource') }}" method="POST">
+    <label for="yt_url">Youtube URL:</label><br>
+    <input type="text" id="yt_url" name="yt_url" size="100"><br><br>
+    <input type="radio" id="video" name="output_type" value="video" checked="checked">
+    <label for="video">Video</label><br>
+    <input type="radio" id="audio" name="output_type" value="audio">
+    <label for="audio">Audio</label><br><br>
+    <input type="submit" value="Download">
+</form>
+
+
+
+  </div>
+{% endblock %}

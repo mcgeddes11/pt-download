@@ -1,0 +1,3 @@
+Flask
+flask-wtf
+git+https://gitlab.com/obuilds/public/pytube.git
