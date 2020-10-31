@@ -82,9 +82,9 @@ def get_resource_to_buffer(url, file_type):
             if retries >= RETRY_COUNT:
                 return {"stream": None, "filename": None, "message": "Retry count exceeded, maybe retry?"}
     if file_type == "video":
-        stream = mov.streams.get_highest_resolution()
+        stream = mov.streams.filter(subtype='mp4').get_highest_resolution()
     else:
-        stream = mov.streams.get_audio_only()
+        stream = mov.streams.filter(subtype='mp4').get_audio_only()
     stream.stream_to_buffer(buffer)
     buffer.seek(0)
 
